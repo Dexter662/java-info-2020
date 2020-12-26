@@ -1,6 +1,6 @@
 package com.informatorio.proyectoFinal.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -31,7 +31,7 @@ public class Usuario {
     @JsonIgnore
     private String password;
     
-    private Date fechaCreacion;
+    private LocalDate fechaCreacion = LocalDate.now();
     private String ciudad;
     private String provincia;
     private String pais;
@@ -46,7 +46,7 @@ public class Usuario {
     	
     }
 
-    public Usuario(int id, String nombre, String apellido, String email, String password, Date fechaCreacion, String ciudad, String provincia, String pais) {
+    public Usuario(int id, String nombre, String apellido, String email, String password, LocalDate fechaCreacion, String ciudad, String provincia, String pais) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -84,11 +84,11 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public Date getFechaCreacion() {
+	public LocalDate getFechaCreacion() {
 		return fechaCreacion;
 	}
 
-	public void setFechaCreacion(Date fechaCreacion) {
+	public void setFechaCreacion(LocalDate fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
 

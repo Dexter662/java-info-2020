@@ -43,9 +43,10 @@ public class UsuarioController {
 	
 	//Crear Usuario
 	@PostMapping("nuevo")
-    public void add(@RequestBody Usuario usuario) {
-        usuarioService.save(usuario);
-    }
+	public ResponseEntity<?> nuevoUsuario(@RequestBody Usuario usuario) {
+		usuarioService.save(usuario);
+		return new ResponseEntity<>(HttpStatus.CREATED);
+	}
 	
 	//Modificar Usuario
 	@PutMapping("editar/{id}")

@@ -1,11 +1,7 @@
 package com.informatorio.proyectoFinal.model;
 
-import java.util.Date;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
+import java.time.LocalDate;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,7 +17,7 @@ public class Comentario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-	private Date fecha_creacion;
+	private LocalDate fechaCreacion = LocalDate.now();
 	private String comentario;
 	
 	@JoinColumn(name = "AUTOR", nullable = false)
@@ -36,18 +32,18 @@ public class Comentario {
 		
 	}
 	
-	public Comentario(int id, Date fecha_creacion, String comentario) {
+	public Comentario(int id, LocalDate fechaCreacion, String comentario) {
 		this.id = id;
-		this.fecha_creacion = fecha_creacion;
+		this.fechaCreacion = fechaCreacion;
 		this.comentario = comentario;
 	}
 
-	public Date getFechaCreacion() {
-		return fecha_creacion;
+	public LocalDate getFechaCreacion() {
+		return fechaCreacion;
 	}
 
-	public void setFechaCreacion(Date fecha_creacion) {
-		this.fecha_creacion = fecha_creacion;
+	public void setFechaCreacion(LocalDate fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
 	}
 
 	public String getComentario() {

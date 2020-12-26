@@ -1,15 +1,11 @@
 package com.informatorio.proyectoFinal.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
-import java.util.Set;
-
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,7 +25,7 @@ public class Post {
 	private String titulo;
 	private String descripcion;
 	private String contenido;
-	private Date fecha_creacion;
+	private LocalDate fechaCreacion = LocalDate.now();
 	private Boolean publicado;
 	
 	@JoinColumn(name = "AUTOR", nullable = false)
@@ -43,12 +39,12 @@ public class Post {
 		
 	}
 	
-	public Post(int id, String titulo, String descripcion, String contenido, Date fecha_creacion, Boolean publicado) {
+	public Post(int id, String titulo, String descripcion, String contenido, LocalDate fechaCreacion, Boolean publicado) {
 		this.id = id;
 		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.contenido = contenido;
-		this.fecha_creacion = fecha_creacion;
+		this.fechaCreacion = fechaCreacion;
 		this.publicado = publicado;
 	}
 
@@ -96,12 +92,12 @@ public class Post {
 		this.contenido = contenido;
 	}
 
-	public Date getFechaCreacion() {
-		return fecha_creacion;
+	public LocalDate getFechaCreacion() {
+		return fechaCreacion;
 	}
 
-	public void setFechaCreacion(Date fecha_creacion) {
-		this.fecha_creacion = fecha_creacion;
+	public void setFechaCreacion(LocalDate fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
 	}
 
 	public Boolean getPublicado() {

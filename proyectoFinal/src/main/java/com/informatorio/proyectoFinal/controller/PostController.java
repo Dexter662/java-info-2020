@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.informatorio.proyectoFinal.model.Comentario;
 import com.informatorio.proyectoFinal.model.Post;
-import com.informatorio.proyectoFinal.model.Usuario;
 import com.informatorio.proyectoFinal.service.PostService;
 
 
